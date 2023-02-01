@@ -1,0 +1,181 @@
+﻿<Page x:Class="WPFShopFlowers.Pages.Admin.PageAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFShopFlowers.Pages.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" 
+      d:DesignWidth="700"
+      
+      Title="Admin">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="375*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" 
+                   Grid.ColumnSpan="2">
+            <Menu 
+                DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save"/>
+                </MenuItem>
+                <MenuItem Header="Help">
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="2"
+            Orientation="Horizontal"
+            Margin="10 0 0 0 ">
+            <Button
+                Height="30"
+                Width="80"
+                Name="AddFlower"
+                Content="Добавить"
+                Click="AddFlower_Click"
+                />
+            <Button
+                Height="30"
+                Width="80"
+                Name="DeleteFlower"
+                Content="Удалить"
+                Click="DeleteFlower_Click"
+                Margin="10 0 0 0 "
+                />
+        </StackPanel>
+        <DockPanel
+            Grid.Row="1"
+            Grid.Column="2"
+            HorizontalAlignment="Right"
+            Background="White"
+            VerticalAlignment="Center"
+            >
+
+            <Label
+                Content="Поиск:"/>
+            <TextBox
+                Name="TxbSearch"
+                MouseDoubleClick="TxbSearch_MouseDoubleClick"
+                SelectionChanged="TxbSearch_SelectionChanged"
+                Width="220"
+                Height="20"
+                Margin="0 0 10 0"
+                HorizontalScrollBarVisibility="Auto">
+
+            </TextBox>
+        </DockPanel>
+
+        <StackPanel 
+            Grid.ColumnSpan="1" 
+            Grid.Row="3"
+            Orientation="Vertical"
+            VerticalAlignment="Top">
+            <Button
+                Name="Flowers"
+                Click="Flowers_Click"
+                Content="Цветы"
+                Width="100"
+                Height="25"
+                Margin="0 10 0 0"
+                />
+            <Button
+                Name="Orders"
+                Click="Orders_Click"
+                Content="Заказы"
+                Width="100"
+                Height="25"
+                Margin="0 10 0 0"
+                />
+            <Button
+                Name="Users"
+                Click="Users_Click"
+                Content="Пользователи"
+                Width="100"
+                Height="25"
+                Margin="0 10 0 0"
+                />
+            <Button
+                Name="ProductSupplier"
+                Click="ProductSupplier_Click"
+                Content="Поставщики"
+                Width="100"
+                Height="25"
+                Margin="0 10 0 0"
+                />
+
+        </StackPanel>
+
+        <DataGrid
+            Grid.Row="2"
+            Grid.Column="1"
+            Name="GridFlowerList"
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            RowBackground="LightGray"
+            AlternatingRowBackground="White"
+            GridLinesVisibility="All" 
+            HorizontalAlignment="Left"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="ID"
+                    Binding="{Binding Id}"
+                    Width="1"
+                    />
+                <DataGridTextColumn
+                    Header="Name"
+                    Binding="{Binding Name}"
+                    Width="2*"
+                    />
+                <DataGridTextColumn
+                    Header="Category"
+                    Binding="{Binding Category}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Country"
+                    Binding="{Binding Country}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Flowering season"
+                    Binding="{Binding FloweringSeason}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Sort"
+                    Binding="{Binding Sort}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Price"
+                    Binding="{Binding Price}"
+                    Width="*"
+                    />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Frame
+            Name="FrmAdmin"
+            NavigationUIVisibility="Hidden" 
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3" Navigated="FrmAdmin_Navigated"/>
+
+    </Grid>
+</Page>

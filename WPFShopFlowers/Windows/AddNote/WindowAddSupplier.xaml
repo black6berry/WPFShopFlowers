@@ -1,0 +1,68 @@
+﻿<Window x:Class="WPFShopFlowers.Windows.AddNote.WindowAddSupplier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFShopFlowers.Windows.AddNote"
+        mc:Ignorable="d"
+        Title="Добавить поставщика" 
+        Height="250" 
+        Width="300"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <StackPanel
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            >
+            <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    >
+                <Label
+                    Content="ФИО"/>
+                <TextBox
+                    Name="TxbFIO"
+                    Width="150"
+                    Height="20"/>
+            </StackPanel>
+            <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    >
+                <Label
+                    Content="Тип строения"/>
+                <TextBox
+                    Name="TxbHouseholdType"
+                    Width="150"
+                    Height="20"
+                   />
+            </StackPanel>
+            <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                >
+                <Label
+                    Content="Расчетный счет"/>
+                <TextBox
+                    Name="TxbPaymentAccount"
+                    Width="150"
+                    Height="20"/>
+            </StackPanel>
+
+            <StackPanel
+                Orientation="Vertical"
+            >
+                <Button
+                    Name="BtnAddSupplier"
+                    Click="BtnAddSupplier_Click"
+                    Content="Сохранить"
+                    Width="80"
+                    Height="25"
+                    Margin="0 20 0 0"
+                />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

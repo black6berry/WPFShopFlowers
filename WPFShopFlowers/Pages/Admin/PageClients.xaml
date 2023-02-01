@@ -1,0 +1,107 @@
+﻿<Page x:Class="WPFShopFlowers.Pages.Admin.PageClients"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFShopFlowers.Pages.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" 
+      d:DesignWidth="700"
+      
+      Title="Администратор">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="375*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="2"
+            Orientation="Horizontal"
+            Margin="10 0 0 0 ">
+            <Button
+                Height="30"
+                Width="80"
+                Name="AddClient"
+                Content="Добавить"
+                Click="AddClient_Click"
+                />
+            <Button
+                Height="30"
+                Width="80"
+                Name="DeleteClient"
+                Content="Удалить"
+                Click="DeleteClient_Click"
+                Margin="10 0 0 0 "
+                />
+        </StackPanel>
+        <!--<DockPanel
+            Grid.Row="1"
+            Grid.Column="2"
+            HorizontalAlignment="Right"
+            Background="White"
+            VerticalAlignment="Center"
+            >
+
+            <Label
+                Content="Поиск:"/>
+            <TextBox
+                Name="TxbSearch"
+                MouseDoubleClick="TxbSearch_MouseDoubleClick"
+                SelectionChanged="TxbSearch_SelectionChanged"
+                Width="220"
+                Height="20"
+                Margin="0 0 10 0"
+                HorizontalScrollBarVisibility="Auto">
+
+            </TextBox>
+        </DockPanel>-->
+
+        <DataGrid
+            Grid.Row="2"
+            Grid.Column="1"
+            Name="GridClientsList"
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            RowBackground="LightGray"
+            AlternatingRowBackground="White"
+            GridLinesVisibility="All" 
+            HorizontalAlignment="Left">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="ID"
+                    Binding="{Binding Id}"
+                    Width="1"
+                    />
+                <DataGridTextColumn
+                    Header="Name"
+                    Binding="{Binding Name}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Login"
+                    Binding="{Binding Login}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Email"
+                    Binding="{Binding Email}"
+                    Width="*"
+                    />
+                <DataGridTextColumn
+                    Header="Role"
+                    Binding="{Binding Role}"
+                    Width="*"
+                    />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
