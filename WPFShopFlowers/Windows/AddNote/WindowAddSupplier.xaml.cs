@@ -32,7 +32,7 @@ namespace WPFShopFlowers.Windows.AddNote
         {
             try
             {
-                string url = $"https://private-public.site/flowers-api/create-supplier";
+                string url = "https://private-public.site/flowers-api/create-supplie";
                 HttpClient client = new HttpClient();
 
                 var request = new Supplier()
